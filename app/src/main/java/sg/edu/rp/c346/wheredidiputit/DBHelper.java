@@ -21,11 +21,11 @@ public class DBHelper extends SQLiteOpenHelper{
     private static final String COLUMN_ID_ITEM = "itemId";
     private static final String ITEM_TITLE = "itemTitle";
 
-//    private static final int DATABASE_VER_PLACE = 1;
-//    private static final String DATABASE_PLACE = "place.db";
+    private static final int DATABASE_VER_PLACE = 1;
+    private static final String DATABASE_PLACE = "place.db";
     //table place
-    private static final String TABLE_PLACE = "place";
-    private static final String COLUMN_ID_PLACE = "placeId";
+//    private static final String TABLE_PLACE = "place";
+//    private static final String COLUMN_ID_PLACE = "placeId";
     private static final String PLACE_TITLE = "placeTitle";
 
 
@@ -40,14 +40,14 @@ public class DBHelper extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
         String createTableSqlItem = "CREATE TABLE " + TABLE_ITEM +  "("
                 + COLUMN_ID_ITEM + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + ITEM_TITLE + " TEXT)";
+                + ITEM_TITLE + " TEXT" + PLACE_TITLE + " TEXT)";
 
-        String createTableSqlPlace = "CREATE TABLE " + TABLE_PLACE +  "("
-                + COLUMN_ID_PLACE + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + PLACE_TITLE + " TEXT)";
+//        String createTableSqlPlace = "CREATE TABLE " + TABLE_PLACE +  "("
+//                + COLUMN_ID_PLACE + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+//                + PLACE_TITLE + " TEXT)";
 
         db.execSQL(createTableSqlItem);
-        db.execSQL(createTableSqlPlace);
+        //        db.execSQL(createTableSqlPlace);
         Log.i("info" ,"created tables");
 
     }
